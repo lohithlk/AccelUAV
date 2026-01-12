@@ -265,24 +265,53 @@ export const TowerDetail: React.FC<TowerDetailProps> = ({ tower, onBack }) => {
 
             <h3 className="text-lg font-bold text-slate-800 mb-4 px-1">Insulator Inspection Gallery</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {tower.insulators.map((ins, idx) => (
-                    <div key={idx} className="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
-                        <div className="aspect-square bg-slate-100 rounded-lg mb-3 overflow-hidden group cursor-zoom-in" onClick={() => setZoomedImage(ins.image || `https://picsum.photos/400/400?random=${idx + 10}`)}>
-                            <img 
-                            src={ins.image || `https://picsum.photos/400/400?random=${idx + 10}`} 
-                            alt={ins.name} 
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                            />
+                {tower.allInsulatorImages && tower.allInsulatorImages.length > 0 ? (
+                    tower.allInsulatorImages.map((imgPath, idx) => {
+                        const insulatorNum = idx + 1;
+                        const insulatorData = tower.insulators.find(ins => ins.id === `i${insulatorNum}`);
+                        return (
+                            <div key={idx} className="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+                                <div className="aspect-square bg-slate-100 rounded-lg mb-3 overflow-hidden group cursor-zoom-in" onClick={() => setZoomedImage(imgPath)}>
+                                    <img 
+                                    src={imgPath} 
+                                    alt={`Insulator ${insulatorNum}`} 
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                                    />
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <span className="font-semibold text-slate-700">Insulator {insulatorNum}</span>
+                                    {insulatorData && insulatorData.status !== Status.NORMAL && <AlertTriangle size={18} className="text-amber-500"/>}
+                                </div>
+                                {insulatorData ? (
+                                    <div className="text-xs text-slate-500 mt-1 flex justify-between">
+                                        <span>Status: <span className={insulatorData.status === Status.NORMAL ? 'text-green-600' : 'text-amber-600'}>{insulatorData.status}</span></span>
+                                    </div>
+                                ) : (
+                                    <div className="text-xs text-slate-400 mt-1">Image reference only</div>
+                                )}
+                            </div>
+                        );
+                    })
+                ) : (
+                    tower.insulators.map((ins, idx) => (
+                        <div key={idx} className="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+                            <div className="aspect-square bg-slate-100 rounded-lg mb-3 overflow-hidden group cursor-zoom-in" onClick={() => setZoomedImage(ins.image || `https://picsum.photos/400/400?random=${idx + 10}`)}>
+                                <img 
+                                src={ins.image || `https://picsum.photos/400/400?random=${idx + 10}`} 
+                                alt={ins.name} 
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                                />
+                            </div>
+                            <div className="flex justify-between items-center">
+                                <span className="font-semibold text-slate-700">{ins.name}</span>
+                                {ins.status !== Status.NORMAL && <AlertTriangle size={18} className="text-amber-500"/>}
+                            </div>
+                            <div className="text-xs text-slate-500 mt-1 flex justify-between">
+                                <span>Status: <span className={ins.status === Status.NORMAL ? 'text-green-600' : 'text-amber-600'}>{ins.status}</span></span>
+                            </div>
                         </div>
-                        <div className="flex justify-between items-center">
-                            <span className="font-semibold text-slate-700">{ins.name}</span>
-                            {ins.status !== Status.NORMAL && <AlertTriangle size={18} className="text-amber-500"/>}
-                        </div>
-                        <div className="text-xs text-slate-500 mt-1 flex justify-between">
-                            <span>Status: <span className={ins.status === Status.NORMAL ? 'text-green-600' : 'text-amber-600'}>{ins.status}</span></span>
-                        </div>
-                    </div>
-                ))}
+                    ))
+                )}
             </div>
         </>
       )}

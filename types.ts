@@ -39,6 +39,7 @@ export interface Tower {
   stringImage: string; // New field for Tension Insulator String assembly
   thermalImage: string;
   insulators: InsulatorData[];
+  allInsulatorImages?: string[]; // All 8 insulator images
   geometry: GeometryData;
   vegetationRisk: 'Low' | 'Medium' | 'High';
 }
