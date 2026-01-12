@@ -80,7 +80,7 @@ export const MOCK_TOWERS: Tower[] = [
     timestamp: "2025/12/30 11:19:17",
     overallImage: new URL("./3/Overall view.jpg", import.meta.url).href,
     stringImage: new URL("./3/220KV Tension Insulator String assembly.jpg", import.meta.url).href,
-    thermalImage: new URL("./3/Thermal inspection.png", import.meta.url).href,
+    thermalImage: new URL("./3/Thermal inspection.jpg", import.meta.url).href,
     vegetationRisk: 'Low',
     geometry: {
       inclinationX: 0.1,
@@ -111,7 +111,7 @@ export const MOCK_TOWERS: Tower[] = [
     timestamp: "2025/12/30 11:29:02",
     overallImage: new URL("./4/Overall view.jpg", import.meta.url).href,
     stringImage: new URL("./4/220KV Tension Insulator String assembly.jpg", import.meta.url).href,
-    thermalImage: new URL("./4/Thermal inspection.png", import.meta.url).href,
+    thermalImage: new URL("./4/Thermal inspection.jpg", import.meta.url).href,
     vegetationRisk: 'High',
     geometry: {
       inclinationX: 0.2,
@@ -173,7 +173,7 @@ export const MOCK_TOWERS: Tower[] = [
     timestamp: "2025/12/30 12:08:32",
     overallImage: new URL("./6/Overall view.jpg", import.meta.url).href,
     stringImage: new URL("./6/220KV Tension Insulator String assembly.jpg", import.meta.url).href,
-    thermalImage: new URL("./6/Thermal inspection.png", import.meta.url).href,
+    thermalImage: new URL("./6/Thermal inspection.jpg", import.meta.url).href,
     vegetationRisk: 'Medium',
     geometry: {
       inclinationX: 0.3,
@@ -204,7 +204,7 @@ export const MOCK_TOWERS: Tower[] = [
     timestamp: "2025/12/30 12:18:17",
     overallImage: new URL("./7/Overall view.jpg", import.meta.url).href,
     stringImage: new URL("./7/220KV Tension Insulator String assembly.jpg", import.meta.url).href,
-    thermalImage: new URL("./7/Thermal inspection.png", import.meta.url).href,
+    thermalImage: new URL("./7/Thermal inspection.jpg", import.meta.url).href,
     vegetationRisk: 'Low',
     geometry: {
       inclinationX: 0.1,
