@@ -12,9 +12,13 @@ import {
   Upload,
   RefreshCw,
   Trash2,
-  CheckCircle2
+  CheckCircle2,
+  ZoomIn,
+  ZoomOut,
+  X
 } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
+import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
 
 interface TowerDetailProps {
   tower: Tower;
@@ -24,6 +28,7 @@ interface TowerDetailProps {
 export const TowerDetail: React.FC<TowerDetailProps> = ({ tower, onBack }) => {
   const [view, setView] = useState<'thermal' | 'visual' | 'geometry'>('thermal');
   const [customThermal, setCustomThermal] = useState<string | null>(null);
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
   // Load saved image from local storage on mount or tower change
   useEffect(() => {
@@ -120,10 +125,18 @@ export const TowerDetail: React.FC<TowerDetailProps> = ({ tower, onBack }) => {
                      <span className="text-xs font-mono bg-slate-100 px-2 py-1 rounded">Max: {Math.max(...tower.insulators.map(i => i.maxTemp))}°C</span>
                 </div>
                 <div className="relative rounded-lg overflow-hidden border border-slate-200 group bg-slate-900">
+                    <button
+                      onClick={() => setZoomedImage(customThermal || tower.thermalImage)}
+                      className="absolute top-4 left-4 z-20 p-2 bg-white/90 hover:bg-white text-slate-700 rounded shadow transition-all backdrop-blur-sm"
+                      title="Click to zoom"
+                    >
+                      <Maximize2 size={16} />
+                    </button>
                     <img 
                       src={customThermal || tower.thermalImage} 
                       alt="Thermal" 
-                      className="w-full h-96 object-contain" 
+                      className="w-full h-96 object-contain cursor-zoom-in" 
+                      onClick={() => setZoomedImage(customThermal || tower.thermalImage)}
                     />
                     
                     {/* Upload Controls Overlay */}
@@ -216,16 +229,36 @@ export const TowerDetail: React.FC<TowerDetailProps> = ({ tower, onBack }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                     <h3 className="text-lg font-bold text-slate-800 mb-2">Overall Structural View</h3>
-                    <div className="relative h-64 w-full bg-slate-100 rounded-lg overflow-hidden flex items-center justify-center">
-                        <img src={tower.overallImage} className="h-full w-full object-contain bg-slate-900" alt="Overall" />
-                        <button className="absolute top-4 right-4 p-2 bg-white/90 rounded-lg shadow hover:bg-white"><Maximize2 size={16}/></button>
+                    <div className="relative h-64 w-full bg-slate-100 rounded-lg overflow-hidden flex items-center justify-center group cursor-zoom-in">
+                        <img 
+                          src={tower.overallImage} 
+                          className="h-full w-full object-contain bg-slate-900" 
+                          alt="Overall"
+                          onClick={() => setZoomedImage(tower.overallImage)}
+                        />
+                        <button 
+                          onClick={() => setZoomedImage(tower.overallImage)}
+                          className="absolute top-4 right-4 p-2 bg-white/90 rounded-lg shadow hover:bg-white transition-all"
+                        >
+                          <Maximize2 size={16}/>
+                        </button>
                     </div>
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
                     <h3 className="text-lg font-bold text-slate-800 mb-2">220KV Tension String Assembly</h3>
-                    <div className="relative h-64 w-full bg-slate-100 rounded-lg overflow-hidden flex items-center justify-center">
-                        <img src={tower.stringImage} className="h-full w-full object-contain bg-slate-900" alt="String Assembly" />
-                        <button className="absolute top-4 right-4 p-2 bg-white/90 rounded-lg shadow hover:bg-white"><Maximize2 size={16}/></button>
+                    <div className="relative h-64 w-full bg-slate-100 rounded-lg overflow-hidden flex items-center justify-center group cursor-zoom-in">
+                        <img 
+                          src={tower.stringImage} 
+                          className="h-full w-full object-contain bg-slate-900" 
+                          alt="String Assembly"
+                          onClick={() => setZoomedImage(tower.stringImage)}
+                        />
+                        <button 
+                          onClick={() => setZoomedImage(tower.stringImage)}
+                          className="absolute top-4 right-4 p-2 bg-white/90 rounded-lg shadow hover:bg-white transition-all"
+                        >
+                          <Maximize2 size={16}/>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -234,7 +267,7 @@ export const TowerDetail: React.FC<TowerDetailProps> = ({ tower, onBack }) => {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {tower.insulators.map((ins, idx) => (
                     <div key={idx} className="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
-                        <div className="aspect-square bg-slate-100 rounded-lg mb-3 overflow-hidden group">
+                        <div className="aspect-square bg-slate-100 rounded-lg mb-3 overflow-hidden group cursor-zoom-in" onClick={() => setZoomedImage(ins.image || `https://picsum.photos/400/400?random=${idx + 10}`)}>
                             <img 
                             src={ins.image || `https://picsum.photos/400/400?random=${idx + 10}`} 
                             alt={ins.name} 
@@ -299,6 +332,65 @@ export const TowerDetail: React.FC<TowerDetailProps> = ({ tower, onBack }) => {
                     </div>
                </div>
           </div>
+      )}
+
+      {/* Image Zoom Modal */}
+      {zoomedImage && (
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+          <button
+            onClick={() => setZoomedImage(null)}
+            className="absolute top-4 right-4 p-2 bg-white/20 hover:bg-white/40 text-white rounded-lg transition-all"
+            title="Close"
+          >
+            <X size={24} />
+          </button>
+          
+          <TransformWrapper
+            initialScale={1}
+            initialPositionX={0}
+            initialPositionY={0}
+            wheel={{ step: 0.1 }}
+            pinch={{ step: 5 }}
+            doubleClick={{ step: 3, animation: true, animationSpeed: 200 }}
+          >
+            {({ zoomIn, zoomOut, resetTransform }) => (
+              <>
+                <TransformComponent>
+                  <img
+                    src={zoomedImage}
+                    alt="Zoomed"
+                    className="max-w-4xl max-h-[85vh] object-contain"
+                  />
+                </TransformComponent>
+                
+                {/* Zoom Controls */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 bg-black/50 p-2 rounded-lg backdrop-blur-sm">
+                  <button
+                    onClick={() => zoomOut()}
+                    className="p-2 bg-white/20 hover:bg-white/40 text-white rounded transition-all"
+                    title="Zoom Out"
+                  >
+                    <ZoomOut size={20} />
+                  </button>
+                  <button
+                    onClick={() => resetTransform()}
+                    className="px-4 py-2 bg-white/20 hover:bg-white/40 text-white rounded transition-all text-sm font-medium"
+                    title="Reset View"
+                  >
+                    Reset
+                  </button>
+                  <button
+                    onClick={() => zoomIn()}
+                    className="p-2 bg-white/20 hover:bg-white/40 text-white rounded transition-all"
+                    title="Zoom In"
+                  >
+                    <ZoomIn size={20} />
+                  </button>
+                </div>
+              </>
+            )}
+          </TransformWrapper>
+        </div>
       )}
     </div>
   );
