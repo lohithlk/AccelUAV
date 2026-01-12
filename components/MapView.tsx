@@ -93,6 +93,14 @@ export const MapView: React.FC<MapViewProps> = ({ towers, onSelectTower }) => {
 
                     const marker = L.marker([t.coordinates.lat, t.coordinates.lng], { icon: icon }).addTo(map);
 
+                    // Create permanent tooltip with tower name
+                    marker.bindTooltip(t.name, {
+                        permanent: true,
+                        direction: 'top',
+                        offset: [0, -15],
+                        className: 'tower-label'
+                    });
+
                     marker.bindPopup(`
                         <div class="p-1 font-sans">
                             <strong class="text-sm text-slate-900">${t.name}</strong><br/>
