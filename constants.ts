@@ -69,12 +69,12 @@ export const MOCK_TOWERS: Tower[] = [
       structuralIntegrity: 95
     },
     insulators: [
-      { id: "i1", name: "Insulator 1", minTemp: 29.4, avgTemp: 31.1, maxTemp: 32.7, status: Status.NORMAL, image: new URL("./2/I (1).jpg", import.meta.url).href },
-      { id: "i2", name: "Insulator 2", minTemp: 28.8, avgTemp: 30.6, maxTemp: 32.4, status: Status.NORMAL, image: new URL("./2/I (2).jpg", import.meta.url).href },
-      { id: "i3", name: "Insulator 3", minTemp: 33.1, avgTemp: 33.9, maxTemp: 34.6, status: Status.NORMAL, image: new URL("./2/I (3).jpg", import.meta.url).href },
-      { id: "i4", name: "Insulator 4", minTemp: 30.5, avgTemp: 31.9, maxTemp: 33.4, status: Status.NORMAL, image: new URL("./2/I (4).jpg", import.meta.url).href },
-      { id: "i5", name: "Insulator 5", minTemp: 29.8, avgTemp: 31.0, maxTemp: 32.2, status: Status.NORMAL, image: new URL("./2/I (5).jpg", import.meta.url).href },
-      { id: "i6", name: "Insulator 6", minTemp: 26.7, avgTemp: 29.2, maxTemp: 31.7, status: Status.NORMAL, image: new URL("./2/I (6).jpg", import.meta.url).href },
+      { id: "i1", name: "Insulator 1", minTemp: 29.4, avgTemp: 31.1, maxTemp: 32.7, status: Status.NORMAL, image: new URL("./2/I1.jpg", import.meta.url).href },
+      { id: "i2", name: "Insulator 2", minTemp: 28.8, avgTemp: 30.6, maxTemp: 32.4, status: Status.NORMAL, image: new URL("./2/I2.jpg", import.meta.url).href },
+      { id: "i3", name: "Insulator 3", minTemp: 33.1, avgTemp: 33.9, maxTemp: 34.6, status: Status.NORMAL, image: new URL("./2/I3.jpg", import.meta.url).href },
+      { id: "i4", name: "Insulator 4", minTemp: 30.5, avgTemp: 31.9, maxTemp: 33.4, status: Status.NORMAL, image: new URL("./2/I4.jpg", import.meta.url).href },
+      { id: "i5", name: "Insulator 5", minTemp: 29.8, avgTemp: 31.0, maxTemp: 32.2, status: Status.NORMAL, image: new URL("./2/I5.jpg", import.meta.url).href },
+      { id: "i6", name: "Insulator 6", minTemp: 26.7, avgTemp: 29.2, maxTemp: 31.7, status: Status.NORMAL, image: new URL("./2/I6.jpg", import.meta.url).href },
     ],
     allInsulatorImages: getInsulatorImages("2")
   },
@@ -99,12 +99,12 @@ export const MOCK_TOWERS: Tower[] = [
       structuralIntegrity: 99
     },
     insulators: [
-      { id: "i1", name: "Insulator 1", minTemp: 30.0, avgTemp: 31.4, maxTemp: 32.9, status: Status.NORMAL, image: new URL("./3/I (1).jpg", import.meta.url).href },
-      { id: "i2", name: "Insulator 2", minTemp: 34.1, avgTemp: 37.1, maxTemp: 40.2, status: Status.ATTENTION, image: new URL("./3/I (2).jpg", import.meta.url).href },
-      { id: "i3", name: "Insulator 3", minTemp: 30.7, avgTemp: 35.2, maxTemp: 39.7, status: Status.ATTENTION, image: new URL("./3/I (3).jpg", import.meta.url).href },
-      { id: "i4", name: "Insulator 4", minTemp: 30.3, avgTemp: 31.7, maxTemp: 33.1, status: Status.NORMAL, image: new URL("./3/I (4).jpg", import.meta.url).href },
-      { id: "i5", name: "Insulator 5", minTemp: 30.5, avgTemp: 32.0, maxTemp: 33.6, status: Status.NORMAL, image: new URL("./3/I (5).jpg", import.meta.url).href },
-      { id: "i6", name: "Insulator 6", minTemp: 31.2, avgTemp: 32.7, maxTemp: 34.2, status: Status.NORMAL, image: new URL("./3/I (6).jpg", import.meta.url).href },
+      { id: "i1", name: "Insulator 1", minTemp: 30.0, avgTemp: 31.4, maxTemp: 32.9, status: Status.NORMAL, image: new URL("./3/I1.jpg", import.meta.url).href },
+      { id: "i2", name: "Insulator 2", minTemp: 34.1, avgTemp: 37.1, maxTemp: 40.2, status: Status.ATTENTION, image: new URL("./3/I2.jpg", import.meta.url).href },
+      { id: "i3", name: "Insulator 3", minTemp: 30.7, avgTemp: 35.2, maxTemp: 39.7, status: Status.ATTENTION, image: new URL("./3/I3.jpg", import.meta.url).href },
+      { id: "i4", name: "Insulator 4", minTemp: 30.3, avgTemp: 31.7, maxTemp: 33.1, status: Status.NORMAL, image: new URL("./3/I4.jpg", import.meta.url).href },
+      { id: "i5", name: "Insulator 5", minTemp: 30.5, avgTemp: 32.0, maxTemp: 33.6, status: Status.NORMAL, image: new URL("./3/I5.jpg", import.meta.url).href },
+      { id: "i6", name: "Insulator 6", minTemp: 31.2, avgTemp: 32.7, maxTemp: 34.2, status: Status.NORMAL, image: new URL("./3/I6.jpg", import.meta.url).href },
     ],
     allInsulatorImages: getInsulatorImages("3")
   },
@@ -129,12 +129,12 @@ export const MOCK_TOWERS: Tower[] = [
       structuralIntegrity: 96
     },
     insulators: [
-      { id: "i1", name: "Insulator 1", minTemp: 29.1, avgTemp: 29.9, maxTemp: 30.7, status: Status.NORMAL, image: new URL("./4/I (1).jpg", import.meta.url).href },
-      { id: "i2", name: "Insulator 2", minTemp: 28.9, avgTemp: 29.6, maxTemp: 30.2, status: Status.NORMAL, image: new URL("./4/I (2).jpg", import.meta.url).href },
-      { id: "i3", name: "Insulator 3", minTemp: 29.3, avgTemp: 29.8, maxTemp: 30.2, status: Status.NORMAL, image: new URL("./4/I (3).jpg", import.meta.url).href },
-      { id: "i4", name: "Insulator 4", minTemp: 28.2, avgTemp: 29.1, maxTemp: 30.1, status: Status.NORMAL, image: new URL("./4/I (4).jpg", import.meta.url).href },
-      { id: "i5", name: "Insulator 5", minTemp: 29.1, avgTemp: 30.2, maxTemp: 31.3, status: Status.NORMAL, image: new URL("./4/I (5).jpg", import.meta.url).href },
-      { id: "i6", name: "Insulator 6", minTemp: 28.2, avgTemp: 29.1, maxTemp: 30.1, status: Status.NORMAL, image: new URL("./4/I (6).jpg", import.meta.url).href },
+      { id: "i1", name: "Insulator 1", minTemp: 29.1, avgTemp: 29.9, maxTemp: 30.7, status: Status.NORMAL, image: new URL("./4/I1.jpg", import.meta.url).href },
+      { id: "i2", name: "Insulator 2", minTemp: 28.9, avgTemp: 29.6, maxTemp: 30.2, status: Status.NORMAL, image: new URL("./4/I2.jpg", import.meta.url).href },
+      { id: "i3", name: "Insulator 3", minTemp: 29.3, avgTemp: 29.8, maxTemp: 30.2, status: Status.NORMAL, image: new URL("./4/I3.jpg", import.meta.url).href },
+      { id: "i4", name: "Insulator 4", minTemp: 28.2, avgTemp: 29.1, maxTemp: 30.1, status: Status.NORMAL, image: new URL("./4/I4.jpg", import.meta.url).href },
+      { id: "i5", name: "Insulator 5", minTemp: 29.1, avgTemp: 30.2, maxTemp: 31.3, status: Status.NORMAL, image: new URL("./4/I5.jpg", import.meta.url).href },
+      { id: "i6", name: "Insulator 6", minTemp: 28.2, avgTemp: 29.1, maxTemp: 30.1, status: Status.NORMAL, image: new URL("./4/I6.jpg", import.meta.url).href },
     ],
     allInsulatorImages: getInsulatorImages("4")
   },
@@ -159,12 +159,12 @@ export const MOCK_TOWERS: Tower[] = [
       structuralIntegrity: 97
     },
     insulators: [
-      { id: "i1", name: "Insulator 1", minTemp: 26.8, avgTemp: 27.4, maxTemp: 28.0, status: Status.NORMAL, image: new URL("./5/I (1).jpg", import.meta.url).href },
-      { id: "i2", name: "Insulator 2", minTemp: 26.7, avgTemp: 27.7, maxTemp: 28.7, status: Status.NORMAL, image: new URL("./5/I (2).jpg", import.meta.url).href },
-      { id: "i3", name: "Insulator 3", minTemp: 26.5, avgTemp: 27.3, maxTemp: 28.0, status: Status.NORMAL, image: new URL("./5/I (3).jpg", import.meta.url).href },
-      { id: "i4", name: "Insulator 4", minTemp: 28.0, avgTemp: 28.6, maxTemp: 29.1, status: Status.NORMAL, image: new URL("./5/I (4).jpg", import.meta.url).href },
-      { id: "i5", name: "Insulator 5", minTemp: 26.5, avgTemp: 27.4, maxTemp: 28.2, status: Status.NORMAL, image: new URL("./5/I (5).jpg", import.meta.url).href },
-      { id: "i6", name: "Insulator 6", minTemp: 25.9, avgTemp: 26.8, maxTemp: 27.6, status: Status.NORMAL, image: new URL("./5/I (6).jpg", import.meta.url).href },
+      { id: "i1", name: "Insulator 1", minTemp: 26.8, avgTemp: 27.4, maxTemp: 28.0, status: Status.NORMAL, image: new URL("./5/I1.jpg", import.meta.url).href },
+      { id: "i2", name: "Insulator 2", minTemp: 26.7, avgTemp: 27.7, maxTemp: 28.7, status: Status.NORMAL, image: new URL("./5/I2.jpg", import.meta.url).href },
+      { id: "i3", name: "Insulator 3", minTemp: 26.5, avgTemp: 27.3, maxTemp: 28.0, status: Status.NORMAL, image: new URL("./5/I3.jpg", import.meta.url).href },
+      { id: "i4", name: "Insulator 4", minTemp: 28.0, avgTemp: 28.6, maxTemp: 29.1, status: Status.NORMAL, image: new URL("./5/I4.jpg", import.meta.url).href },
+      { id: "i5", name: "Insulator 5", minTemp: 26.5, avgTemp: 27.4, maxTemp: 28.2, status: Status.NORMAL, image: new URL("./5/I5.jpg", import.meta.url).href },
+      { id: "i6", name: "Insulator 6", minTemp: 25.9, avgTemp: 26.8, maxTemp: 27.6, status: Status.NORMAL, image: new URL("./5/I6.jpg", import.meta.url).href },
     ],
     allInsulatorImages: getInsulatorImages("5")
   },
@@ -189,12 +189,12 @@ export const MOCK_TOWERS: Tower[] = [
       structuralIntegrity: 94
     },
     insulators: [
-      { id: "i1", name: "Insulator 1", minTemp: 29.1, avgTemp: 29.9, maxTemp: 30.7, status: Status.NORMAL, image: new URL("./6/I (1).jpg", import.meta.url).href },
-      { id: "i2", name: "Insulator 2", minTemp: 28.9, avgTemp: 29.6, maxTemp: 30.2, status: Status.NORMAL, image: new URL("./6/I (2).jpg", import.meta.url).href },
-      { id: "i3", name: "Insulator 3", minTemp: 29.3, avgTemp: 29.8, maxTemp: 30.2, status: Status.NORMAL, image: new URL("./6/I (3).jpg", import.meta.url).href },
-      { id: "i4", name: "Insulator 4", minTemp: 28.2, avgTemp: 29.1, maxTemp: 30.1, status: Status.NORMAL, image: new URL("./6/I (4).jpg", import.meta.url).href },
-      { id: "i5", name: "Insulator 5", minTemp: 29.1, avgTemp: 30.2, maxTemp: 31.3, status: Status.NORMAL, image: new URL("./6/I (5).jpg", import.meta.url).href },
-      { id: "i6", name: "Insulator 6", minTemp: 28.2, avgTemp: 29.1, maxTemp: 30.1, status: Status.NORMAL, image: new URL("./6/I (6).jpg", import.meta.url).href },
+      { id: "i1", name: "Insulator 1", minTemp: 29.1, avgTemp: 29.9, maxTemp: 30.7, status: Status.NORMAL, image: new URL("./6/I1.jpg", import.meta.url).href },
+      { id: "i2", name: "Insulator 2", minTemp: 28.9, avgTemp: 29.6, maxTemp: 30.2, status: Status.NORMAL, image: new URL("./6/I2.jpg", import.meta.url).href },
+      { id: "i3", name: "Insulator 3", minTemp: 29.3, avgTemp: 29.8, maxTemp: 30.2, status: Status.NORMAL, image: new URL("./6/I3.jpg", import.meta.url).href },
+      { id: "i4", name: "Insulator 4", minTemp: 28.2, avgTemp: 29.1, maxTemp: 30.1, status: Status.NORMAL, image: new URL("./6/I4.jpg", import.meta.url).href },
+      { id: "i5", name: "Insulator 5", minTemp: 29.1, avgTemp: 30.2, maxTemp: 31.3, status: Status.NORMAL, image: new URL("./6/I5.jpg", import.meta.url).href },
+      { id: "i6", name: "Insulator 6", minTemp: 28.2, avgTemp: 29.1, maxTemp: 30.1, status: Status.NORMAL, image: new URL("./6/I6.jpg", import.meta.url).href },
     ],
     allInsulatorImages: getInsulatorImages("6")
   },
@@ -219,12 +219,12 @@ export const MOCK_TOWERS: Tower[] = [
       structuralIntegrity: 99
     },
     insulators: [
-      { id: "i1", name: "Insulator 1", minTemp: 31.4, avgTemp: 33.0, maxTemp: 34.6, status: Status.NORMAL, image: new URL("./7/I (1).jpg", import.meta.url).href },
-      { id: "i2", name: "Insulator 2", minTemp: 33.4, avgTemp: 34.2, maxTemp: 35.0, status: Status.NORMAL, image: new URL("./7/I (2).jpg", import.meta.url).href },
-      { id: "i3", name: "Insulator 3", minTemp: 33.4, avgTemp: 34.3, maxTemp: 35.1, status: Status.NORMAL, image: new URL("./7/I (3).jpg", import.meta.url).href },
-      { id: "i4", name: "Insulator 4", minTemp: 31.1, avgTemp: 32.3, maxTemp: 33.5, status: Status.NORMAL, image: new URL("./7/I (4).jpg", import.meta.url).href },
-      { id: "i5", name: "Insulator 5", minTemp: 31.1, avgTemp: 32.5, maxTemp: 33.8, status: Status.NORMAL, image: new URL("./7/I (5).jpg", import.meta.url).href },
-      { id: "i6", name: "Insulator 6", minTemp: 30.9, avgTemp: 31.9, maxTemp: 32.8, status: Status.NORMAL, image: new URL("./7/I (6).jpg", import.meta.url).href },
+      { id: "i1", name: "Insulator 1", minTemp: 31.4, avgTemp: 33.0, maxTemp: 34.6, status: Status.NORMAL, image: new URL("./7/I1.jpg", import.meta.url).href },
+      { id: "i2", name: "Insulator 2", minTemp: 33.4, avgTemp: 34.2, maxTemp: 35.0, status: Status.NORMAL, image: new URL("./7/I2.jpg", import.meta.url).href },
+      { id: "i3", name: "Insulator 3", minTemp: 33.4, avgTemp: 34.3, maxTemp: 35.1, status: Status.NORMAL, image: new URL("./7/I3.jpg", import.meta.url).href },
+      { id: "i4", name: "Insulator 4", minTemp: 31.1, avgTemp: 32.3, maxTemp: 33.5, status: Status.NORMAL, image: new URL("./7/I4.jpg", import.meta.url).href },
+      { id: "i5", name: "Insulator 5", minTemp: 31.1, avgTemp: 32.5, maxTemp: 33.8, status: Status.NORMAL, image: new URL("./7/I5.jpg", import.meta.url).href },
+      { id: "i6", name: "Insulator 6", minTemp: 30.9, avgTemp: 31.9, maxTemp: 32.8, status: Status.NORMAL, image: new URL("./7/I6.jpg", import.meta.url).href },
     ],
     allInsulatorImages: getInsulatorImages("7")
   }
